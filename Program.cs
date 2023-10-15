@@ -21,4 +21,16 @@
 //78 -> третьей цифры нет
 //32679 -> 6
 
-
+int NumberSearch (int num)
+{
+    int newnum = 0;
+    if ((num >= 100) && (num < 1000)) newnum = num % 10;
+    else if ((num >= 1000) && (num < 10000)) newnum = (num % 100)/10;
+    else if ((num >= 10000) && (num < 100000)) newnum = (num % 1000)/100;
+    else if (num < 100) Console.WriteLine ("Третьей цифры нет");
+    else Console.WriteLine ("Введите, пожалуйста, число в диапозоне от 100 до 100000");  
+    return newnum;
+}
+Console.WriteLine ("Введите число: ");
+int num = Convert.ToInt32 (Console.ReadLine());
+Console.WriteLine (NumberSearch(num));
